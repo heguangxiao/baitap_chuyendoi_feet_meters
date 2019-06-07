@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+
+    <p>
+        <label>Meter</label>
+        <input id="inOutMeter" type="number" placeholder="Meter"
+            oninput="inMeterShowFeet(this.value)"
+            onchange="inMeterShowFeet(this.value)"/>
+    </p>
+    <p>
+        <label>Feet </label>
+        <input id="inOutFeet" type="number" placeholder="Feet"
+               oninput="inFeetShowMeter(this.value)"
+               onchange="inFeetShowMeter(this.value)"/>
+    </p>
+
+</div>
+
+
+<script>
+
+    function inFeetShowMeter(feets) {
+        document.getElementById('inOutMeter').value = outMeter(feets);
+    }
+
+    function inMeterShowFeet(meters) {
+        document.getElementById('inOutFeet').value = outFoot(meters);
+    }
+    
+    function outFoot(meter) {
+        let feet = parseFloat(meter) * 3.279;
+        return feet;
+    }
+
+    function outMeter(feed) {
+        let meter = parseFloat(feed) * 0.305;
+        return meter;
+    }
+</script>
+</body>
+</html>
